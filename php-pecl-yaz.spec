@@ -16,6 +16,7 @@ BuildRequires:	php-devel >= 3:5.0.0
 BuildRequires:	yaz-devel
 Requires:	php-common >= 3:5.0.0
 Obsoletes:	php-pear-%{_modname}
+Obsoletes:	php-yaz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_sysconfdir	/etc/php
