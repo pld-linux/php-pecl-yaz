@@ -33,7 +33,7 @@ http://www.indexdata.dk/yaz/
 In PECL status of this package is: %{_status}.
 
 %description -l pl
-To rozszerzenie implemntuje klienta Z39.50 dla PHP za pomoc± narzêdzi
+To rozszerzenie implementuje klienta Z39.50 dla PHP za pomoc± narzêdzi
 YAZ.
 
 Wiêcej informacji mo¿na znale¼æ na stronach:
