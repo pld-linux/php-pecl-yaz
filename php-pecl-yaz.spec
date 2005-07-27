@@ -4,12 +4,12 @@
 Summary:	%{_modname} - a Z39.50 client for PHP
 Summary(pl):	%{_modname} - klient Z39.50 dla PHP
 Name:		php-pecl-%{_modname}
-Version:	1.0.2
+Version:	1.0.4
 Release:	1
 License:	PHP
 Group:		Development/Languages/PHP
 Source0:	http://pecl.php.net/get/%{_modname}-%{version}.tgz
-# Source0-md5:	fdc2523617bb9e8b9f74e6f8ee044269
+# Source0-md5:	2ae4180bcfc00199c465815f89fc3b16
 URL:		http://pecl.php.net/package/yaz/
 BuildRequires:	libtool
 BuildRequires:	php-devel >= 3:5.0.0
