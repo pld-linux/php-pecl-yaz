@@ -26,8 +26,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 This extension implements a Z39.50 client for PHP using the YAZ
 toolkit.
 
-Find more information at:
-http://www.indexdata.dk/phpyaz/
+Find more information at: http://www.indexdata.dk/phpyaz/
 http://www.indexdata.dk/yaz/
 
 In PECL status of this package is: %{_status}.
@@ -37,8 +36,7 @@ To rozszerzenie implementuje klienta Z39.50 dla PHP za pomoc± narzêdzi
 YAZ.
 
 Wiêcej informacji mo¿na znale¼æ na stronach:
-http://www.indexdata.dk/phpyaz/
-http://www.indexdata.dk/yaz/
+http://www.indexdata.dk/phpyaz/ http://www.indexdata.dk/yaz/
 
 To rozszerzenie ma w PECL status: %{_status}.
 
