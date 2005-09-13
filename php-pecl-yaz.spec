@@ -11,7 +11,6 @@ Group:		Development/Languages/PHP
 Source0:	http://pecl.php.net/get/%{_modname}-%{version}.tgz
 # Source0-md5:	2ae4180bcfc00199c465815f89fc3b16
 URL:		http://pecl.php.net/package/yaz/
-BuildRequires:	libtool
 BuildRequires:	php-devel >= 3:5.0.0
 BuildRequires:	yaz-devel
 Requires:	php-common >= 3:5.0.0
