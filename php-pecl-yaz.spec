@@ -13,7 +13,7 @@ Source0:	http://pecl.php.net/get/%{_modname}-%{version}.tgz
 # Source0-md5:	e240666711bfd9936bb9632272a53ecc
 URL:		http://pecl.php.net/package/yaz/
 BuildRequires:	php-devel >= 3:5.0.0
-BuildRequires:	rpmbuild(macros) >= 1.254
+BuildRequires:	rpmbuild(macros) >= 1.322
 BuildRequires:	yaz-devel
 %{?requires_php_extension}
 Requires:	%{_sysconfdir}/conf.d
