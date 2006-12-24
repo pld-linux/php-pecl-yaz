@@ -5,15 +5,16 @@
 Summary:	%{_modname} - a Z39.50 client for PHP
 Summary(pl):	%{_modname} - klient Z39.50 dla PHP
 Name:		php-pecl-%{_modname}
-Version:	1.0.7
-Release:	2
+Version:	1.0.8
+Release:	1
 License:	PHP
 Group:		Development/Languages/PHP
 Source0:	http://pecl.php.net/get/%{_modname}-%{version}.tgz
-# Source0-md5:	e240666711bfd9936bb9632272a53ecc
+# Source0-md5:	72795905f95e7786b17b9918989eeaa6
 URL:		http://pecl.php.net/package/yaz/
+BuildRequires:	libxslt-devel
 BuildRequires:	php-devel >= 3:5.0.0
-BuildRequires:	rpmbuild(macros) >= 1.322
+BuildRequires:	rpmbuild(macros) >= 1.344
 BuildRequires:	yaz-devel
 %{?requires_php_extension}
 Requires:	%{_sysconfdir}/conf.d
@@ -62,13 +63,11 @@ EOF
 rm -rf $RPM_BUILD_ROOT
 
 %post
-[ ! -f /etc/apache/conf.d/??_mod_php.conf ] || %service -q apache restart
-[ ! -f /etc/httpd/httpd.conf/??_mod_php.conf ] || %service -q httpd restart
+%php_webserver_restart
 
 %postun
 if [ "$1" = 0 ]; then
-	[ ! -f /etc/apache/conf.d/??_mod_php.conf ] || %service -q apache restart
-	[ ! -f /etc/httpd/httpd.conf/??_mod_php.conf ] || %service -q httpd restart
+	%php_webserver_restart
 fi
 
 %files
