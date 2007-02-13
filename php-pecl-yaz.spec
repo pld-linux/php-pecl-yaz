@@ -1,7 +1,7 @@
 %define		_modname	yaz
 %define		_status		stable
 Summary:	%{_modname} - a Z39.50 client for PHP
-Summary(pl.UTF-8):   %{_modname} - klient Z39.50 dla PHP
+Summary(pl.UTF-8):	%{_modname} - klient Z39.50 dla PHP
 Name:		php-pecl-%{_modname}
 Version:	1.0.8
 Release:	1
