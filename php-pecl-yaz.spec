@@ -3,21 +3,22 @@
 Summary:	%{_modname} - a Z39.50 client for PHP
 Summary(pl.UTF-8):	%{_modname} - klient Z39.50 dla PHP
 Name:		php-pecl-%{_modname}
-Version:	1.0.8
+Version:	1.0.14
 Release:	1
 License:	PHP
 Group:		Development/Languages/PHP
 Source0:	http://pecl.php.net/get/%{_modname}-%{version}.tgz
-# Source0-md5:	72795905f95e7786b17b9918989eeaa6
+# Source0-md5:	ad75c5aba798ed4f708e4a6b8b72ca0a
 URL:		http://pecl.php.net/package/yaz/
 BuildRequires:	libxslt-devel
 BuildRequires:	php-devel >= 3:5.0.0
 BuildRequires:	rpmbuild(macros) >= 1.344
-BuildRequires:	yaz-devel
+BuildRequires:	yaz-devel >= 3.0.2
 %{?requires_php_extension}
 Requires:	php-common >= 4:5.0.4
 Obsoletes:	php-pear-%{_modname}
 Obsoletes:	php-yaz
+Suggests:	re2c >= 0.13.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
