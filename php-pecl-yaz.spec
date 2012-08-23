@@ -4,7 +4,7 @@ Summary:	%{_modname} - a Z39.50 client for PHP
 Summary(pl.UTF-8):	%{_modname} - klient Z39.50 dla PHP
 Name:		php-pecl-%{_modname}
 Version:	1.0.14
-Release:	6
+Release:	7
 License:	PHP
 Group:		Development/Languages/PHP
 Source0:	http://pecl.php.net/get/%{_modname}-%{version}.tgz
@@ -15,10 +15,10 @@ BuildRequires:	php-devel >= 3:5.0.0
 BuildRequires:	rpmbuild(macros) >= 1.344
 BuildRequires:	yaz-devel >= 3.0.2
 %{?requires_php_extension}
-Requires:	php-common >= 4:5.0.4
+Requires:	php(core) >= 5.0.4
+Suggests:	re2c >= 0.13.4
 Obsoletes:	php-pear-%{_modname}
 Obsoletes:	php-yaz
-Suggests:	re2c >= 0.13.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
