@@ -1,23 +1,24 @@
-%define		_modname	yaz
-%define		_status		stable
-Summary:	%{_modname} - a Z39.50 client for PHP
-Summary(pl.UTF-8):	%{_modname} - klient Z39.50 dla PHP
-Name:		php-pecl-%{_modname}
+%define		php_name	php%{?php_suffix}
+%define		modname		yaz
+%define		status		stable
+Summary:	%{modname} - a Z39.50 client for PHP
+Summary(pl.UTF-8):	%{modname} - klient Z39.50 dla PHP
+Name:		%{php_name}-pecl-%{modname}
 Version:	1.0.14
 Release:	7
 License:	PHP
 Group:		Development/Languages/PHP
-Source0:	http://pecl.php.net/get/%{_modname}-%{version}.tgz
+Source0:	http://pecl.php.net/get/%{modname}-%{version}.tgz
 # Source0-md5:	ad75c5aba798ed4f708e4a6b8b72ca0a
 URL:		http://pecl.php.net/package/yaz/
 BuildRequires:	libxslt-devel
-BuildRequires:	php-devel >= 3:5.0.0
-BuildRequires:	rpmbuild(macros) >= 1.344
+BuildRequires:	%{php_name}-devel >= 3:5.0.0
+BuildRequires:	rpmbuild(macros) >= 1.650
 BuildRequires:	yaz-devel >= 3.0.2
 %{?requires_php_extension}
 Requires:	php(core) >= 5.0.4
 Suggests:	re2c >= 0.13.4
-Obsoletes:	php-pear-%{_modname}
+Obsoletes:	php-pear-%{modname}
 Obsoletes:	php-yaz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -28,7 +29,7 @@ toolkit.
 Find more information at: <http://www.indexdata.dk/phpyaz/>
 <http://www.indexdata.dk/yaz/>.
 
-In PECL status of this package is: %{_status}.
+In PECL status of this package is: %{status}.
 
 %description -l pl.UTF-8
 To rozszerzenie implementuje klienta Z39.50 dla PHP za pomocą narzędzi
@@ -37,13 +38,13 @@ YAZ.
 Więcej informacji można znaleźć na stronach:
 <http://www.indexdata.dk/phpyaz/> <http://www.indexdata.dk/yaz/>.
 
-To rozszerzenie ma w PECL status: %{_status}.
+To rozszerzenie ma w PECL status: %{status}.
 
 %prep
-%setup -q -c
+%setup -qc
+mv %{modname}-%{version}/* .
 
 %build
-cd %{_modname}-%{version}
 phpize
 %configure
 %{__make}
@@ -52,10 +53,10 @@ phpize
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{php_sysconfdir}/conf.d,%{php_extensiondir}}
 
-install %{_modname}-%{version}/modules/%{_modname}.so $RPM_BUILD_ROOT%{php_extensiondir}
-cat <<'EOF' > $RPM_BUILD_ROOT%{php_sysconfdir}/conf.d/%{_modname}.ini
-; Enable %{_modname} extension module
-extension=%{_modname}.so
+install -p modules/%{modname}.so $RPM_BUILD_ROOT%{php_extensiondir}
+cat <<'EOF' > $RPM_BUILD_ROOT%{php_sysconfdir}/conf.d/%{modname}.ini
+; Enable %{modname} extension module
+extension=%{modname}.so
 EOF
 
 %clean
@@ -71,6 +72,6 @@ fi
 
 %files
 %defattr(644,root,root,755)
-%doc %{_modname}-%{version}/{CREDITS,README}
-%config(noreplace) %verify(not md5 mtime size) %{php_sysconfdir}/conf.d/%{_modname}.ini
-%attr(755,root,root) %{php_extensiondir}/%{_modname}.so
+%doc CREDITS README
+%config(noreplace) %verify(not md5 mtime size) %{php_sysconfdir}/conf.d/%{modname}.ini
+%attr(755,root,root) %{php_extensiondir}/%{modname}.so
