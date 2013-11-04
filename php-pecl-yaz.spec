@@ -5,7 +5,7 @@ Summary:	%{modname} - a Z39.50 client for PHP
 Summary(pl.UTF-8):	%{modname} - klient Z39.50 dla PHP
 Name:		%{php_name}-pecl-%{modname}
 Version:	1.0.14
-Release:	7
+Release:	8
 License:	PHP
 Group:		Development/Languages/PHP
 Source0:	http://pecl.php.net/get/%{modname}-%{version}.tgz
