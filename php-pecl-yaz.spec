@@ -1,15 +1,14 @@
 %define		php_name	php%{?php_suffix}
 %define		modname		yaz
-%define		status		stable
 Summary:	%{modname} - a Z39.50 client for PHP
 Summary(pl.UTF-8):	%{modname} - klient Z39.50 dla PHP
 Name:		%{php_name}-pecl-%{modname}
-Version:	1.0.14
-Release:	8
-License:	PHP
+Version:	1.1.6
+Release:	1
+License:	PHP v3.01
 Group:		Development/Languages/PHP
 Source0:	http://pecl.php.net/get/%{modname}-%{version}.tgz
-# Source0-md5:	ad75c5aba798ed4f708e4a6b8b72ca0a
+# Source0-md5:	b4d586861df602ed330da38c3136d86c
 URL:		http://pecl.php.net/package/yaz/
 BuildRequires:	libxslt-devel
 BuildRequires:	%{php_name}-devel >= 3:5.0.0
@@ -29,16 +28,12 @@ toolkit.
 Find more information at: <http://www.indexdata.dk/phpyaz/>
 <http://www.indexdata.dk/yaz/>.
 
-In PECL status of this package is: %{status}.
-
 %description -l pl.UTF-8
 To rozszerzenie implementuje klienta Z39.50 dla PHP za pomocą narzędzi
 YAZ.
 
 Więcej informacji można znaleźć na stronach:
 <http://www.indexdata.dk/phpyaz/> <http://www.indexdata.dk/yaz/>.
-
-To rozszerzenie ma w PECL status: %{status}.
 
 %prep
 %setup -qc
