@@ -4,7 +4,7 @@ Summary:	%{modname} - a Z39.50 client for PHP
 Summary(pl.UTF-8):	%{modname} - klient Z39.50 dla PHP
 Name:		%{php_name}-pecl-%{modname}
 Version:	1.1.6
-Release:	3
+Release:	4
 License:	PHP v3.01
 Group:		Development/Languages/PHP
 Source0:	http://pecl.php.net/get/%{modname}-%{version}.tgz
@@ -17,7 +17,7 @@ BuildRequires:	yaz-devel >= 3.0.2
 %{?requires_php_extension}
 Suggests:	re2c >= 0.13.4
 Provides:	php(%{modname}) = %{version}
-Obsoletes:	php-pecl-yaz < 1.1.6-2
+Obsoletes:	php-pecl-yaz < 1.1.6-3
 Obsoletes:	php-yaz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
